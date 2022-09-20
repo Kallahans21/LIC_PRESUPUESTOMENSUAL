@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prueba</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+  <header class="flex gap-5 flex items-center justify-center flex-col py-[5rem] bg-gray-200">
+    <h1 id="titulo-header" class="text-[2rem] text-center">
+      Presupuesto de Enero 2019
+    </h1>
+
+    <div class="flex flex-col inline-flex gap-3">
+      <h2 id="restante" class="text-2xl font-semibold text-center">+500</h2>
+      <div class="text-white gap-3 bg-black flex p-2 border-black border-[2px]">
+        <p>Ingresos</p>
+        <p id="total-ingresos">+800.00</p>
+      </div>
+
+      <div class="border-[2px] border-black flex p-2 gap-3">
+        <p>Egresos</p>
+        <p id="total-egresos">+800.00</p>
+      </div>
+
+      <div class="flex gap-3 items-center">
+        Porcentaje de gastos
+        <div id="porcentaje-gastos" class="bg-black text-white px-2 py-1 inline-flex">80%</div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container mx-auto grid grid-cols-2">
+    <div class="p-[1rem] flex flex-col gap-5">
+      <h1 class="text-[2rem]">
+        Transacción
+      </h1>
+
+      <div class="flex flex-col gap-3">
+        <select id="ingreso-tipo" class="p-3 border-[2px] outline-none" name="" id="">
+          <option value="Ingresos">Ingresos</option>
+          <option value="Egresos">Egresos</option>
+        </select>
+        <input id="descripcion" placeholder="Descripción" class="p-3 border-[2px] outline-none" type="text">
+        <input id="monto" placeholder="Monto" class="p-3 border-[2px] outline-none" type="number">
+        <button id="agregar" class="p-3 bg-black text-white">Agregar</button>
+      </div>
+    </div>
+
+    <div class="border-l p-[1rem] flex flex-col gap-5">
+      <!-- Actions -->
+      <div class="flex grid-cols-2 grid">
+        <button id="tab-ingresos" class="cursor-pointer text-center p-5 rounded-l-lg">
+          Ingresos
+        </button>
+        <button id="tab-egresos" class="cursor-pointer text-center p-5  rounded-r-lg">
+          Egresos
+        </button>
+      </div>
+
+      <div id="lista" class="flex flex-col gap-1"></div>
+    </div>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
